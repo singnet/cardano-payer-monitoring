@@ -1,0 +1,6 @@
+fastapi[standard]==0.115.0
+uvicorn==0.30.6
+blockfrost-python==0.6.0
+apscheduler==3.10.4
+requests==2.32.3
+pytz==2024.2
