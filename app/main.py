@@ -45,9 +45,9 @@ async def check_balances() -> None:
             address_info = blockfrost_api.address(payer_data["address"])
             balance = sum([int(amount.quantity) for amount in address_info.amount if amount.unit == "lovelace"])
             ada_balance = balance / 1_000_000
-            logger.info(f"Balance for {payer_data['address']}: {ada_balance} ADA")
+            logger.info(f"Balance for {payer_data['address']}: {ada_balance} ({balance}) ADA")
 
-            balance_health(payer_data, ada_balance)
+            balance_health(payer_data, balance)
 
         except ApiError as e:
             logger.info(f"Error for get balance {payer_data['address']}: {str(e)}")
