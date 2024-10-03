@@ -9,9 +9,9 @@ class AddressHealth(Enum):
 
 
 class BalanceValue(Enum):
-    MEDIUM = 200000000
-    LOW = 100000000
-    CRITICAL = 50000000
+    MEDIUM = 150
+    LOW = 100
+    CRITICAL = 50
 
 
 class TokenPayer(Enum):
