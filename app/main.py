@@ -70,7 +70,7 @@ async def send_daily_balances() -> None:
 
 def balance_health(payer_data, address_balance):
     rounded_balance = round(address_balance)
-    if rounded_balance <= BalanceValue.MEDIUM.value:
+    if rounded_balance < BalanceValue.MEDIUM.value:
         balance_status = AddressHealth.MEDIUM.value
     elif rounded_balance <= BalanceValue.LOW.value:
         balance_status = AddressHealth.LOW.value
