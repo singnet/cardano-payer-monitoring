@@ -69,11 +69,12 @@ async def send_daily_balances() -> None:
 
 
 def balance_health(payer_data, address_balance):
-    if address_balance <= BalanceValue.MEDIUM.value:
+    rounded_balance = round(address_balance)
+    if rounded_balance <= BalanceValue.MEDIUM.value:
         balance_status = AddressHealth.MEDIUM.value
-    elif address_balance <= BalanceValue.LOW.value:
+    elif rounded_balance <= BalanceValue.LOW.value:
         balance_status = AddressHealth.LOW.value
-    elif address_balance < BalanceValue.CRITICAL.value:
+    elif rounded_balance < BalanceValue.CRITICAL.value:
         balance_status = AddressHealth.CRITICAL.value
     else:
         balance_status = AddressHealth.NORMAL.value
