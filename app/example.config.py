@@ -14,7 +14,7 @@ class MorningTimeAlert(Enum):
     MINUTES = 00
 
 
-class EveningTimeAlert:
+class EveningTimeAlert(Enum):
     HOURS = 18
     MINUTES = 00
 
